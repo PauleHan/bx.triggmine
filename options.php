@@ -2,7 +2,7 @@
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\Localization\Loc;
 
-$module_id = "triggmine";
+$module_id = "bx.triggmine";
 
 if (!$USER->IsAdmin()) {
     return;

@@ -6,17 +6,24 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-class triggmine extends CModule 
+class bx_triggmine extends CModule 
 {
-    var $MODULE_ID = "triggmine";
+    var $MODULE_ID = "bx.triggmine";
+    var $MODULE_NAME;
+	var $MODULE_DESCRIPTION;
+	var $MODULE_VERSION;
+	var $MODULE_VERSION_DATE;
     var $PARTNER_NAME = 'TriggMine';
     var $PARTNER_URI = 'http://triggmine.com/';
 
     function __construct()
     {
         $arModuleVersion = array();
+        
         include("version.php");
-        if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion)) {
+        
+        if (is_array($arModuleVersion) && array_key_exists("VERSION", $arModuleVersion))
+        {
             $this->MODULE_VERSION = $arModuleVersion["VERSION"];
             $this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
         }
